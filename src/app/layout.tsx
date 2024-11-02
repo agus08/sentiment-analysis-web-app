@@ -28,7 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="w-full max-w-md mx-auto font-[family-name:var(--font-geist-sans)]">
+
+          {children}
+        </div>
       </body>
     </html>
   );
