@@ -2,6 +2,7 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { formatString } from "@/lib/utils";
+import clsx from "clsx";
 import { redirect, useParams } from "next/navigation";
 import React, { useState, useRef, useCallback } from "react";
 
@@ -107,11 +108,9 @@ const AutocompleteInput: React.FC = () => {
             </svg>
           </button>
         )}
-        {loading && (
-          <div className="absolute right-3 top-3">
-            <div className="loading-bar"></div>
-          </div>
-        )}
+        <div className={clsx(loading ? 'block' : 'hidden', 'px-5')}>
+          <div className="loading-bar"></div>
+        </div>
       </div>
 
       {isDropdownOpen && (
